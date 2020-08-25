@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.ViewOrderActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/restfoodimage"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/burger"
+            android:layout_margin="3dp"
+            android:scaleType="centerInside"
+            android:foregroundGravity="center"
+            />
+
+        <View
+            android:id="@+id/lineEnd"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/restfoodimage"
+            android:background="#fff"
+            />
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/lineEnd"
+            android:layout_marginLeft="3dp"
+            android:padding="3dp"
+            >
+            <TextView
+                android:id="@+id/restfoodname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="BUrger"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+
+                />
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/restfoodprice"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="120"
+            android:layout_marginRight="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:textSize="10dp"
+            />
+        <View
+            android:id="@+id/lineEnd1"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/restfoodimage"
+            android:background="#fff"
+            />
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+
+            android:drawableLeft="@drawable/ic_delete_24dp"
+
+            android:layout_marginTop="18dp"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/delete"/>
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

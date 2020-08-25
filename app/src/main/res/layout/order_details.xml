@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/orderfoodimage"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/burger"
+            android:layout_margin="3dp"
+            android:scaleType="centerInside"
+            android:foregroundGravity="center"
+            />
+
+        <View
+            android:id="@+id/lineEnd"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/restfoodimage"
+            android:background="#fff"
+            />
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/lineEnd"
+            android:layout_marginLeft="3dp"
+            android:padding="3dp"
+            >
+            <TextView
+                android:id="@+id/orderfoodname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="Laptop"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+
+                />
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/btnupdate"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:drawableStart="@drawable/edit"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="5dp"
+            />
+        <Button
+            android:id="@+id/btndelete"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:drawableStart="@drawable/delete"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

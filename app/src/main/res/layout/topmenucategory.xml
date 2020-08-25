@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_marginLeft="20dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/menuimage"
+        android:layout_width="50dp"
+        android:src="@drawable/frenchfries"
+        android:layout_height="50dp"/>
+    <TextView
+        android:id="@+id/menuname"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="name"
+        android:layout_below="@id/menuimage"/>
+
+</RelativeLayout>

@@ -1,0 +1,2 @@
+include ':app', ':foodordering_wear'
+rootProject.name='Foodorderingapp'
