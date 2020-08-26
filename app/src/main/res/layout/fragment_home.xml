@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="#fff"
     android:orientation="vertical"
     tools:context=".Fragment.HomeFragment">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -95,6 +95,8 @@
        android:id="@+id/recycler_populattoday"
        android:layout_below="@id/relaative_pop"/>
 
+
+
    <RelativeLayout
        android:id="@+id/relaative_restaurant"
        android:layout_width="match_parent"
@@ -108,23 +110,14 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_alignParentStart="true"
-          android:text="Resturant"
+          android:text=" All Resturant"
           android:textSize="15sp"
           android:textStyle="bold"
           android:textColor="@color/black"
           android:layout_marginStart="10dp"
           android:layout_marginTop="20dp"/>
 
-      <Button
-           android:id="@+id/btnallrestuarnt"
-          android:layout_width="80dp"
-          android:layout_height="30dp"
-          android:layout_marginTop="20dp"
-          android:text="View All"
-          android:textSize="10dp"
-          android:background="@drawable/button"
-          android:textColor="#fff"
-          android:layout_alignParentEnd="true" />
+
 
    </RelativeLayout>
 
@@ -134,6 +127,16 @@
        android:layout_height="wrap_content"
       android:id="@+id/recycler_restuarant"
       android:layout_below="@id/relaative_restaurant"/>
+
+   <Button
+       android:id="@+id/allresturants"
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:text="View More"
+       android:textAlignment="center"
+       android:padding="0dp"
+       android:layout_margin="70dp"
+       android:layout_below="@id/recycler_restuarant" />
 
 
 

@@ -30,10 +30,10 @@ public class ViewResturantFoodActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_resturant_food);
+       // setContentView(R.layout.activity_view_resturant_food);
 
 
-        rv = findViewById(R.id.recycler_resturantfood);
+       // rv = findViewById(R.id.recycler_resturantfood);
 
 
  lstresfood = new ArrayList<>();

@@ -67,22 +67,15 @@ public class HomeFragment extends Fragment implements SensorEventListener {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
 
-       resbutton =  v.findViewById(R.id.btnallrestuarnt);
+       resbutton =  v.findViewById(R.id.allresturants);
 
        //Calling Sensor Light
 
 
 
 
-        resbutton.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
-                  Intent intent = new Intent(getContext(), ViewResturantActitvity.class);
-                  startActivity(intent);
-              }
-          });
 
-        recyclerView = v.findViewById(R.id.popular_recyclerview);
+       // recyclerView = v.findViewById(R.id.popular_recyclerview);
         rv = v.findViewById(R.id.popular_recyclerview_hotdeals);
         recyclerView_res = v.findViewById(R.id.recycler_restuarant);
         rv_popular = v.findViewById(R.id.recycler_populattoday);

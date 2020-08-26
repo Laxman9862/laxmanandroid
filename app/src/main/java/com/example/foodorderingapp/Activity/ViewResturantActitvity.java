@@ -34,13 +34,13 @@ public class ViewResturantActitvity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_resturant_actitvity);
+        //setContentView(R.layout.activity_view_resturant_actitvity);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("All Resturant");
 
 
-        recyclerView = findViewById(R.id.recycler_viewallresturant);
+       // recyclerView = findViewById(R.id.recycler_viewallresturant);
 
 
 

@@ -4,16 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="30dp"
     android:background="#fff"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="0dp"
     >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
         <ImageView
             android:id="@+id/cartlist"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:textAlignment="center"
             android:src="@drawable/cart"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="10dp"/>

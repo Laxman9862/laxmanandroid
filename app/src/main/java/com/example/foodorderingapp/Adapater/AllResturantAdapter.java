@@ -37,7 +37,7 @@ public class AllResturantAdapter extends RecyclerView.Adapter<AllResturantAdapte
     @NonNull
     @Override
     public AllResturantViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mcontext).inflate(R.layout.foodavailable,parent,false);
+        View v = LayoutInflater.from(mcontext).inflate(R.layout.explorefood,parent,false);
         return new AllResturantViewHolder(v);
     }
 
@@ -88,11 +88,11 @@ public class AllResturantAdapter extends RecyclerView.Adapter<AllResturantAdapte
         public AllResturantViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            resimage = itemView.findViewById(R.id.food_img);
-            txtname = itemView.findViewById(R.id.rest_name);
-            txtaddress = itemView.findViewById(R.id.rest_name);
-            txtinfo = itemView.findViewById(R.id.rest_address);
-            txtstatus = itemView.findViewById(R.id.rest_status);
+           // resimage = itemView.findViewById(R.id.food_img);
+           // txtname = itemView.findViewById(R.id.rest_name);
+          //  txtaddress = itemView.findViewById(R.id.rest_name);
+          //  txtinfo = itemView.findViewById(R.id.rest_address);
+          //  txtstatus = itemView.findViewById(R.id.rest_status);
 
         }
     }

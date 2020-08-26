@@ -35,7 +35,7 @@ public class FoodAdapater extends RecyclerView.Adapter<FoodAdapater.FoodViewhold
     @NonNull
     @Override
     public FoodViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mcontext).inflate(R.layout.foodavailable,parent,false);
+        View v = LayoutInflater.from(mcontext).inflate(R.layout.explorefood,parent,false);
         return new FoodViewholder(v);
     }
 
@@ -68,11 +68,11 @@ public class FoodAdapater extends RecyclerView.Adapter<FoodAdapater.FoodViewhold
 
         public FoodViewholder(@NonNull View itemView) {
             super(itemView);
-            foodimg = itemView.findViewById(R.id.food_img);
-            txtrest_name = itemView.findViewById(R.id.rest_name);
-            txtrest_address = itemView.findViewById(R.id.rest_address);
-            txtrest_info = itemView.findViewById(R.id.rest_info);
-            txtrest_status = itemView.findViewById(R.id.rest_status);
+           // foodimg = itemView.findViewById(R.id.food_img);
+           // txtrest_name = itemView.findViewById(R.id.rest_name);
+           // txtrest_address = itemView.findViewById(R.id.rest_address);
+           // txtrest_info = itemView.findViewById(R.id.rest_info);
+            //txtrest_status = itemView.findViewById(R.id.rest_status);
         }
     }
 

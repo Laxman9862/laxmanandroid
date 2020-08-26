@@ -23,19 +23,20 @@
     android:orientation="vertical"
     android:padding="20dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/userprofile"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/circleuser"
-            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Sigmup here"
+            android:textAlignment="center"
+            android:textSize="30dp"/>
+
         <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="42dp"
             android:background="@drawable/login_edittext"
-            android:hint="Name"
+            android:hint="Enter Your fullname"
             android:paddingLeft="18dp" />
 
 
@@ -46,7 +47,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="42dp"
         android:background="@drawable/login_edittext"
-        android:hint="E-mail"
+        android:hint=" emter your e-mail"
         android:paddingLeft="18dp" />
         <EditText
             android:id="@+id/phone"
@@ -54,7 +55,7 @@
             android:layout_height="48dp"
             android:layout_marginTop="42dp"
             android:background="@drawable/login_edittext"
-            android:hint="contact No"
+            android:hint="enter your phone number"
             android:paddingLeft="18dp" />
         <EditText
             android:id="@+id/username"
@@ -62,7 +63,7 @@
             android:layout_height="48dp"
             android:layout_marginTop="42dp"
             android:background="@drawable/login_edittext"
-            android:hint="username"
+            android:hint=" enter username"
             android:paddingLeft="18dp" />
 
     <EditText
@@ -71,7 +72,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="42dp"
         android:background="@drawable/login_edittext"
-        android:hint="Password"
+        android:hint=" enter your desire Password"
         android:paddingLeft="18dp"
         />
         <EditText
@@ -80,7 +81,7 @@
             android:layout_height="48dp"
             android:layout_marginTop="42dp"
             android:background="@drawable/login_edittext"
-            android:hint="ConfirmPassword"
+            android:hint="plsease enter password again"
             android:paddingLeft="18dp"
             />
 

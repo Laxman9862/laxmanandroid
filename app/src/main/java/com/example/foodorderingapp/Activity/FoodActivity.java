@@ -25,7 +25,7 @@ public class FoodActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        rv_food = findViewById(R.id.recycler_food);
+        rv_food = findViewById(R.id.food_recyclerview);
 
 
 
