@@ -210,8 +210,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 String username =  response.body().getName();
                 //Toast.makeText(DashboardActivity.this,"image:"+imgPath,Toast.LENGTH_SHORT).show();
                 //Toast.makeText(DashboardActivity.this,"name:"+username,Toast.LENGTH_SHORT).show();
-                TextView navigationtxtuser = (TextView)drawer.findViewById(R.id.txt1);
-                ImageView profile = (ImageView)drawer.findViewById(R.id.userprofile);
+                ImageView profile = (ImageView)drawer.findViewById(R.id.nav_header_textView);
                  //navigationtxtuser.setText(username);
 
             }
