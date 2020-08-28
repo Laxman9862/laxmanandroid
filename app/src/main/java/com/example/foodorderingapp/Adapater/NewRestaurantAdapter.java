@@ -47,6 +47,15 @@ public class NewRestaurantAdapter extends RecyclerView.Adapter<NewRestaurantAdap
 
         Restuarant res = lstres.get(position);
        // holder.imgres.setImageResource(res.getRes_image());
+        String imagepath = Url.BASE_URL +"uploads/" + lstres.get(position).getRes_image();
+        try {
+            URL url=new URL(imagepath);
+            holder.imgres.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
+
+
+        } catch (Exception e) {
+
+        }
         holder.txtres.setText(res.getResturant_name());
 
     }

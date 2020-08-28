@@ -206,10 +206,13 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 }
 
                 globaluser = response.body();
+                //String imgPath = Url.imagePath +  response.body().getProfileimage();
                 String username =  response.body().getName();
-                TextView navigationtxtuser = (TextView)drawer.findViewById(R.id.nav_header_username);
+                //Toast.makeText(DashboardActivity.this,"image:"+imgPath,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(DashboardActivity.this,"name:"+username,Toast.LENGTH_SHORT).show();
+                //TextView navigationtxtuser = (TextView)drawer.findViewById(R.id.nav_header_username);
                 ImageView profile = (ImageView)drawer.findViewById(R.id.nav_header_imageView);
-                 navigationtxtuser.setText(username);
+                 //navigationtxtuser.setText(username);
 
             }
 

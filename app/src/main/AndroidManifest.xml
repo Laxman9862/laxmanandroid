@@ -21,7 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.ViewOrderActivity"></activity>
+
+
+        <activity android:name=".Activity.ViewOrderActivity" />
         <activity android:name=".Activity.DashboardActivity" />
         <activity
             android:name=".Activity.ViewResturantFoodActivity"
@@ -46,6 +48,9 @@
             android:parentActivityName=".Activity.DashboardActivity" />
         <activity
             android:name=".Activity.EditProfile"
+            android:parentActivityName=".Activity.DashboardActivity" />
+        <activity
+            android:name=".Activity.ResActivity"
             android:parentActivityName=".Activity.DashboardActivity" />
         <activity android:name=".Activity.RegisterActivity" />
         <activity android:name=".Activity.MainActivity" />

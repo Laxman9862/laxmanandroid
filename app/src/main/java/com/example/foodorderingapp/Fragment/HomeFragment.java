@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.foodorderingapp.Activity.ResActivity;
 import com.example.foodorderingapp.Activity.ViewResturantActitvity;
 import com.example.foodorderingapp.Adapater.ExplorefoodAdapater;
 import com.example.foodorderingapp.Adapater.HotDealsAdapater;
@@ -67,9 +68,17 @@ public class HomeFragment extends Fragment implements SensorEventListener {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
 
-       resbutton =  v.findViewById(R.id.allresturants);
+        resbutton =  v.findViewById(R.id.allresturants);
 
-       //Calling Sensor Light
+        resbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ResActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
 
 
