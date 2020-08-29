@@ -12,9 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.foodorderingapp.Activity.OrderActivity;
 import com.example.foodorderingapp.Model.Food;
-import com.example.foodorderingapp.Model.Restuarant;
 import com.example.foodorderingapp.R;
 import com.example.foodorderingapp.URL.Url;
 import com.example.foodorderingapp.strictmode.StrictModeClass;
