@@ -28,6 +28,7 @@ public class ResActivity extends AppCompatActivity {
      private  List<Restuarant> restuarantListList = new ArrayList<>();
     RecyclerView recyclerView;
 
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

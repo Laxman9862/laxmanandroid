@@ -41,9 +41,7 @@ public class AvailableResturantAdapter extends RecyclerView.Adapter<AvailableRes
 
     @Override
     public void onBindViewHolder(@NonNull AvailableResturantViewHolder holder, int position) {
-
-
-        final Restuarant res = lstres.get(position);
+        Restuarant res = lstres.get(position);
 
         String imagepath = Url.BASE_URL +"uploads/" + lstres.get(position).getRes_image();
         String re8sname = lstres.get(position).getResturant_name();
@@ -66,7 +64,6 @@ public class AvailableResturantAdapter extends RecyclerView.Adapter<AvailableRes
 
 
                 Intent i = new Intent(mcontext, ViewResturantFoodActivity.class);
-                i.putExtra("id",res.get_id());
                 mcontext.startActivity(i);
             }
         });
@@ -86,12 +83,7 @@ public class AvailableResturantAdapter extends RecyclerView.Adapter<AvailableRes
 
         public AvailableResturantViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            // resimage = itemView.findViewById(R.id.food_img);
-            // txtname = itemView.findViewById(R.id.rest_name);
-            //  txtaddress = itemView.findViewById(R.id.rest_name);
-            //  txtinfo = itemView.findViewById(R.id.rest_address);
-            //  txtstatus = itemView.findViewById(R.id.rest_status);
+;
 
         }
     }
