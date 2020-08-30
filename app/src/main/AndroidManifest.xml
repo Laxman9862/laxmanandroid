@@ -41,9 +41,6 @@
             android:name=".Activity.ResturantFoodActivity"
             android:parentActivityName=".Activity.DashboardActivity" />
         <activity
-            android:name=".Activity.CartActivity"
-            android:parentActivityName=".Activity.DashboardActivity" />
-        <activity
             android:name=".Activity.FoodActivity"
             android:parentActivityName=".Activity.DashboardActivity" />
         <activity

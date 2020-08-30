@@ -1,7 +1,5 @@
 package com.example.foodorderingapp.Fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,7 +13,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.foodorderingapp.Adapater.CartAdapater;
 import com.example.foodorderingapp.Interface.OrderApi;
 import com.example.foodorderingapp.Model.Cart;
 import com.example.foodorderingapp.R;
