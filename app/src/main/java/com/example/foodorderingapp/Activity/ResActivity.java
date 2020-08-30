@@ -28,7 +28,6 @@ public class ResActivity extends AppCompatActivity {
      private  List<Restuarant> restuarantListList = new ArrayList<>();
     RecyclerView recyclerView;
 
-
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +35,7 @@ public class ResActivity extends AppCompatActivity {
         setContentView(R.layout.activity_resturantall);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("All Resturant");
-        recyclerView = findViewById(R.id.allresturants);
+        recyclerView = findViewById(R.id.recyclerallres);
 
         RestuarantApi restuarantApi = Url.getInstance().create(RestuarantApi.class);
         Call<List<Restuarant>> restuarantCall = restuarantApi.getrest(Url.token);
@@ -54,9 +53,9 @@ public class ResActivity extends AppCompatActivity {
                 }
 
                 restuarantListList = response.body();
-                AvailableResturantAdapter availableResturantAdapter = new AvailableResturantAdapter(getApplication(), restuarantListList);
+                AvailableResturantAdapter availableResturantAdapter = new AvailableResturantAdapter(ResActivity.this, restuarantListList);
                 recyclerView.setAdapter(availableResturantAdapter);
-                recyclerView.setLayoutManager(new LinearLayoutManager(getApplication()));
+                recyclerView.setLayoutManager(new LinearLayoutManager(ResActivity.this));
 
 
             }

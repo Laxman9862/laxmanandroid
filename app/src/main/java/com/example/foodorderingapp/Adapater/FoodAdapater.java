@@ -11,9 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.foodorderingapp.Activity.FooddetailsActivity;
+import com.example.foodorderingapp.Activity.ResturantFoodActivity;
 import com.example.foodorderingapp.Model.Food;
-import com.example.foodorderingapp.Model.Restuarant;
 import com.example.foodorderingapp.R;
 
 import java.util.List;
@@ -49,8 +48,8 @@ public class FoodAdapater extends RecyclerView.Adapter<FoodAdapater.FoodViewhold
         holder.txtrest_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(mcontext, FooddetailsActivity.class);
-                v.getContext().startActivity(new Intent(v.getContext(), FooddetailsActivity.class));
+                Intent i = new Intent(mcontext, ResturantFoodActivity.class);
+                v.getContext().startActivity(new Intent(v.getContext(), ResturantFoodActivity.class));
             }
         });
 

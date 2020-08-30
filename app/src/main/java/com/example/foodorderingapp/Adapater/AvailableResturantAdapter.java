@@ -35,13 +35,15 @@ public class AvailableResturantAdapter extends RecyclerView.Adapter<AvailableRes
     @NonNull
     @Override
     public AvailableResturantAdapter.AvailableResturantViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mcontext).inflate(R.layout.resturant,parent,false);
+        View v = LayoutInflater.from(mcontext).inflate(R.layout.restuarntall,parent,false);
         return new AvailableResturantAdapter.AvailableResturantViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AvailableResturantViewHolder holder, int position) {
-        Restuarant res = lstres.get(position);
+
+
+        final Restuarant res = lstres.get(position);
 
         String imagepath = Url.BASE_URL +"uploads/" + lstres.get(position).getRes_image();
         String re8sname = lstres.get(position).getResturant_name();
@@ -64,6 +66,7 @@ public class AvailableResturantAdapter extends RecyclerView.Adapter<AvailableRes
 
 
                 Intent i = new Intent(mcontext, ViewResturantFoodActivity.class);
+                i.putExtra("id",res.get_id());
                 mcontext.startActivity(i);
             }
         });
@@ -83,7 +86,12 @@ public class AvailableResturantAdapter extends RecyclerView.Adapter<AvailableRes
 
         public AvailableResturantViewHolder(@NonNull View itemView) {
             super(itemView);
-;
+
+               resimage = itemView.findViewById(R.id.ivImage);
+                txtname = itemView.findViewById(R.id.txtresName);
+            //  txtaddress = itemView.findViewById(R.id.rest_name);
+            //  txtinfo = itemView.findViewById(R.id.rest_address);
+            //  txtstatus = itemView.findViewById(R.id.rest_status);
 
         }
     }

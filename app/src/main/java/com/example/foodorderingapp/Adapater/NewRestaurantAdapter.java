@@ -27,6 +27,7 @@ public class NewRestaurantAdapter extends RecyclerView.Adapter<NewRestaurantAdap
     Context mcontext;
     List<Restuarant> lstres;
 
+
     public NewRestaurantAdapter(Context mcontext, List<Restuarant> lstres) {
         this.mcontext = mcontext;
         this.lstres = lstres;

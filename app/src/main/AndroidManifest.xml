@@ -35,7 +35,10 @@
         <activity android:name=".Notification.BroadcastActivity" />
         <activity android:name=".Notification.NotificationActivity" />
         <activity
-            android:name=".Activity.FooddetailsActivity"
+            android:name=".Activity.OrderActivity"
+            android:parentActivityName=".Activity.DashboardActivity" />
+        <activity
+            android:name=".Activity.ResturantFoodActivity"
             android:parentActivityName=".Activity.DashboardActivity" />
         <activity
             android:name=".Activity.CartActivity"
