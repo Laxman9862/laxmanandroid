@@ -15,8 +15,12 @@ import com.example.foodorderingapp.Model.Restuarant;
 import com.example.foodorderingapp.R;
 import com.example.foodorderingapp.URL.Url;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,18 +29,19 @@ import retrofit2.Response;
 public class ViewResturantFoodActivity extends AppCompatActivity {
 
     RecyclerView rv;
-    public static List<Food> lstresfood;
+    List<Restuarant> lstresfood;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_view_resturant_food);
+       setContentView(R.layout.activity_fooddetails);
 
 
-       // rv = findViewById(R.id.recycler_resturantfood);
+       rv = findViewById(R.id.food_recyclerview);
 
 
- lstresfood = new ArrayList<>();
+      //foodlist = new ArrayList<>();
 
 
         getResfood();
@@ -47,35 +52,47 @@ public class ViewResturantFoodActivity extends AppCompatActivity {
 
 
         Bundle bundle = getIntent().getExtras();
-        String resid = bundle.getString("id");
-        Toast.makeText(this, "id:" + resid, Toast.LENGTH_SHORT).show();
-
-
-        FoodApi restuarantApi = Url.getInstance().create(FoodApi.class);
-       Call<List<Food>> resfoodcall = restuarantApi.getcategory(Url.token);
 
 
 
-       resfoodcall.enqueue(new Callback<List<Food>>() {
+       String resid = bundle.getString("resid").toString();
+       Toast.makeText(this, "resid:" + resid, Toast.LENGTH_SHORT).show();
+
+
+        RestuarantApi restuarantApi = Url.getInstance().create(RestuarantApi.class);
+       Call<List<Restuarant>> resfoodcall = restuarantApi.getrestfood(Url.token, resid);
+
+
+
+       resfoodcall.enqueue(new Callback<List<Restuarant>>() {
            @Override
-           public void onResponse(Call <List<Food>> call, Response<List<Food>>response) {
+           public void onResponse(Call <List<Restuarant>> call, Response<List<Restuarant>>response) {
                if (!response.isSuccessful()) {
                    Toast.makeText(ViewResturantFoodActivity.this, "Error" + response.code(), Toast.LENGTH_SHORT).show();
                    return;
                }
-               lstresfood = response.body();
+
+              lstresfood = response.body();
+
+
+
+
+
 
                RestaurantFoodAdapter foodAdapter = new RestaurantFoodAdapter(ViewResturantFoodActivity.this,lstresfood);
-               rv.setAdapter(foodAdapter);
+                rv.setAdapter(foodAdapter);
                rv.setLayoutManager(new LinearLayoutManager(ViewResturantFoodActivity.this));
 
 
            }
 
            @Override
-           public void onFailure(Call<List<Food>> call, Throwable t) {
+           public void onFailure(Call<List<Restuarant>> call, Throwable t) {
+               Toast.makeText(ViewResturantFoodActivity.this, "Error" + t.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
 
            }
+
+
        });
     }
 }

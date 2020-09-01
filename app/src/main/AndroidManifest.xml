@@ -38,9 +38,6 @@
             android:name=".Activity.OrderActivity"
             android:parentActivityName=".Activity.DashboardActivity" />
         <activity
-            android:name=".Activity.ResturantFoodActivity"
-            android:parentActivityName=".Activity.DashboardActivity" />
-        <activity
             android:name=".Activity.FoodActivity"
             android:parentActivityName=".Activity.DashboardActivity" />
         <activity

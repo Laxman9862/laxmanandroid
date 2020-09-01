@@ -63,6 +63,7 @@ public class ResActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Restuarant>> call, Throwable t) {
 
+
             }
         });
 

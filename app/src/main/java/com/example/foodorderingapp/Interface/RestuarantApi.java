@@ -6,14 +6,19 @@ import com.example.foodorderingapp.Model.Restuarant;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface RestuarantApi {
 
-    @GET("resturants ")
+    @GET("resturants")
     Call<List<Restuarant>> getrest (@Header("Authorization")String token);
+
+    @GET("resturants/{id}")
+    Call<List<Restuarant>> getrestfood(@Header("Authorization") String token, @Path("id") String id);
 
 
 

@@ -26,14 +26,9 @@ import java.util.List;
 public class RestaurantFoodAdapter extends  RecyclerView.Adapter<RestaurantFoodAdapter.RestaurantFoodViewHolder> {
 
     Context mcontext;
+    List<Restuarant> lstres;
 
-    List<Food> lstres;
-
-
-
-
-
-    public RestaurantFoodAdapter(Context  mcontext, List<Food> lstres){
+    public RestaurantFoodAdapter(Context  mcontext, List<Restuarant> lstres){
 
         this.mcontext= mcontext;
         this.lstres = lstres;
@@ -52,43 +47,27 @@ public class RestaurantFoodAdapter extends  RecyclerView.Adapter<RestaurantFoodA
 
     @Override
     public void onBindViewHolder(@NonNull RestaurantFoodViewHolder holder, int position) {
-
-
-       final Food food = lstres.get(position);
-
-        String name = lstres.get(position).getFoodname();
-         String fid = lstres.get(position).getId();
-
-
-       String imagepath = Url.BASE_URL + "uploads/" + lstres.get(position).getFoodimage();
-
-        Food res = lstres.get(position);
-
-
-
-
-
-
+        final Restuarant res = lstres.get(position);
+         String imagepath = Url.BASE_URL + "uploads/" + lstres.get(position).getFooddetails().getFoodimage();
         StrictModeClass.StrictMode();
         try {
           URL url = new URL(imagepath);
            holder.restfoodimg.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
+           holder.txtrestfoodname.setText(res.getFooddetails().getFoodname());
+           holder.txtrestfoodprice.setText(res.getFooddetails().getPrice());
 
         } catch (Exception e) {
 
             e.printStackTrace();
         }
 
-        holder.txtrestfoodname.setText(name);
 
 
         holder.txtrestfoodname.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(mcontext, OrderActivity.class);
-                i.putExtra("foodid",food.getId());
-                i.putExtra("foodname",food.getFoodname());
-                mcontext.startActivity(i);
+
+
             }
         });
     }
@@ -97,7 +76,7 @@ public class RestaurantFoodAdapter extends  RecyclerView.Adapter<RestaurantFoodA
 
     @Override
     public int getItemCount() {
-        return lstres.size();
+         return lstres.size();
     }
 
     public class RestaurantFoodViewHolder extends RecyclerView.ViewHolder {

@@ -1,10 +1,19 @@
 package com.example.foodorderingapp.Model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Restuarant {
+    private String _id;
+    private String resturant_name;
+    private String resturant_address;
+    private String res_image;
+    @SerializedName("fooddetails")
+    @Expose
+    private Food fooddetails;
 
 
     public String get_id() {
@@ -39,36 +48,19 @@ public class Restuarant {
         this.res_image = res_image;
     }
 
-//    public Food getFooditem() {
-//        return fooditem;
-//    }
-//
-//    public void setFooditem(Food fooditem) {
-//        this.fooditem = fooditem;
+    public Food getFooddetails() {
+        return fooddetails;
+    }
 
+    public void setFooddetails(Food fooddetails) {
+        this.fooddetails = fooddetails;
+    }
 
-    private String _id;
-    private String resturant_name;
-    private String resturant_address;
-    private String res_image;
-
-    //private  Food fooditem;
-
-
-
-
-
-    public Restuarant(String _id, String resturant_name, String resturant_address, String res_image) {
+    public Restuarant(String _id, String resturant_name, String resturant_address, String res_image, Food fooddetails) {
         this._id = _id;
         this.resturant_name = resturant_name;
         this.resturant_address = resturant_address;
         this.res_image = res_image;
-        //this.fooditem = fooditem;
-    }
-    public Restuarant( String resturant_name,String res_image) {
-
-        this.resturant_name = resturant_name;
-        this.res_image = res_image;
-
+        this.fooddetails = fooddetails;
     }
 }
