@@ -3,6 +3,7 @@ package com.example.foodorderingapp.Interface;
 import com.example.foodorderingapp.Model.Food;
 import com.example.foodorderingapp.Model.Restuarant;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -18,7 +19,7 @@ public interface RestuarantApi {
     Call<List<Restuarant>> getrest (@Header("Authorization")String token);
 
     @GET("resturants/{id}")
-    Call<List<Restuarant>> getrestfood(@Header("Authorization") String token, @Path("id") String id);
+    Call<List<Restuarant>> getrestfood(@Path("id") String id);
 
 
 

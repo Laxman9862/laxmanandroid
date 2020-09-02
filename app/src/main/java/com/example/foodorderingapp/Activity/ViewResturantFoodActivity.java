@@ -19,6 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -29,7 +30,7 @@ import retrofit2.Response;
 public class ViewResturantFoodActivity extends AppCompatActivity {
 
     RecyclerView rv;
-    List<Restuarant> lstresfood;
+    List<Food> lstresfood;
 
 
     @Override
@@ -59,41 +60,32 @@ public class ViewResturantFoodActivity extends AppCompatActivity {
        Toast.makeText(this, "resid:" + resid, Toast.LENGTH_SHORT).show();
 
 
-        RestuarantApi restuarantApi = Url.getInstance().create(RestuarantApi.class);
-       Call<List<Restuarant>> resfoodcall = restuarantApi.getrestfood(Url.token, resid);
+       FoodApi foodApi = Url.getInstance().create(FoodApi.class);
+       Call<List<Food>> foodcall = foodApi.getfood();
 
 
-
-       resfoodcall.enqueue(new Callback<List<Restuarant>>() {
+       foodcall.enqueue(new Callback<List<Food>>() {
            @Override
-           public void onResponse(Call <List<Restuarant>> call, Response<List<Restuarant>>response) {
+           public void onResponse(Call<List<Food>> call, Response<List<Food>> response) {
                if (!response.isSuccessful()) {
                    Toast.makeText(ViewResturantFoodActivity.this, "Error" + response.code(), Toast.LENGTH_SHORT).show();
                    return;
                }
+               lstresfood = response.body();
 
-              lstresfood = response.body();
-
-
-
-
-
-
-               RestaurantFoodAdapter foodAdapter = new RestaurantFoodAdapter(ViewResturantFoodActivity.this,lstresfood);
-                rv.setAdapter(foodAdapter);
+               RestaurantFoodAdapter foodAdapter = new RestaurantFoodAdapter(ViewResturantFoodActivity.this, lstresfood);
+               rv.setAdapter(foodAdapter);
                rv.setLayoutManager(new LinearLayoutManager(ViewResturantFoodActivity.this));
-
-
            }
 
            @Override
-           public void onFailure(Call<List<Restuarant>> call, Throwable t) {
-               Toast.makeText(ViewResturantFoodActivity.this, "Error" + t.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+           public void onFailure(Call<List<Food>> call, Throwable t) {
 
            }
-
-
        });
+
+
+
     }
 }
 

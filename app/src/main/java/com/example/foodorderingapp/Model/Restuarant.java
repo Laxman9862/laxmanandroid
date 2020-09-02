@@ -14,6 +14,15 @@ public class Restuarant {
     @SerializedName("fooddetails")
     @Expose
     private Food fooddetails;
+    @SerializedName("foodname")
+    @Expose
+    private String foodname;
+    @SerializedName("foodimage")
+    @Expose
+    private String foodimage;
+    @SerializedName("price")
+    @Expose
+    private String price;
 
 
     public String get_id() {
@@ -56,11 +65,38 @@ public class Restuarant {
         this.fooddetails = fooddetails;
     }
 
-    public Restuarant(String _id, String resturant_name, String resturant_address, String res_image, Food fooddetails) {
+    public String getFoodname() {
+        return foodname;
+    }
+
+    public void setFoodname(String foodname) {
+        this.foodname = foodname;
+    }
+
+    public String getFoodimage() {
+        return foodimage;
+    }
+
+    public void setFoodimage(String foodimage) {
+        this.foodimage = foodimage;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public Restuarant(String _id, String resturant_name, String resturant_address, String res_image, Food fooddetails, String foodname, String foodimage, String price) {
         this._id = _id;
         this.resturant_name = resturant_name;
         this.resturant_address = resturant_address;
         this.res_image = res_image;
         this.fooddetails = fooddetails;
+        this.foodname = foodname;
+        this.foodimage = foodimage;
+        this.price = price;
     }
 }

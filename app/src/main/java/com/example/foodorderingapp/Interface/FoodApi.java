@@ -11,5 +11,5 @@ import retrofit2.http.Header;
 public interface FoodApi {
 
     @GET("foods")
-    Call<List<Food>> getcategory (@Header("Authorization")String token);
+    Call<List<Food>> getfood ();
 }
