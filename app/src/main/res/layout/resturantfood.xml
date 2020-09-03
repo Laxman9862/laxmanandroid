@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+<LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="100dp"
@@ -19,7 +23,6 @@
             android:id="@+id/restfoodimage"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/burger"
             android:layout_margin="3dp"
             android:scaleType="centerInside"
             android:foregroundGravity="center"
@@ -34,11 +37,11 @@
             android:background="#fff"
             />
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_toRightOf="@+id/lineEnd"
             android:layout_marginLeft="3dp"
             android:padding="3dp"
@@ -48,9 +51,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13dp"
-                android:text="Laptop"
                 android:layout_marginTop="20dp"
                 android:textStyle="bold"
+
+                />
+
+
+            <TextView
+                android:id="@+id/restfoodprice"
+                android:layout_width="wrap_content"
+                android:layout_height="33dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_toEndOf="@id/restfoodname"
+                android:text= "Rs. 120"
 
                 />
 
@@ -59,21 +73,26 @@
 
 
 
-        </LinearLayout>
 
 
 
-       <TextView
-           android:id="@+id/restfoodprice"
-           android:layout_width="30dp"
-           android:layout_height="wrap_content"
-           android:text="120"
-           android:layout_alignParentEnd="true"
-           android:layout_marginTop="20dp"
-           />
+        </RelativeLayout>
+
+
+
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:id="@+id/addtocartbtn"
+            android:textAllCaps="false"
+            android:text="AddToCart"
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_height="wrap_content"/>
 
 
     </RelativeLayout>
 
 
 </LinearLayout>
+</androidx.cardview.widget.CardView>

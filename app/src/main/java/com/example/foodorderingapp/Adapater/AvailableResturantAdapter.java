@@ -67,6 +67,7 @@ public class AvailableResturantAdapter extends RecyclerView.Adapter<AvailableRes
 
                 Intent i = new Intent(mcontext, ViewResturantFoodActivity.class);
                 i.putExtra("resid", res.get_id());
+                i.putExtra("resname", res.getResturant_name());
                 mcontext.startActivity(i);
             }
         });

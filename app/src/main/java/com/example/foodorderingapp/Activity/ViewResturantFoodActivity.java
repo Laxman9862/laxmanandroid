@@ -1,5 +1,6 @@
 package com.example.foodorderingapp.Activity;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,6 +42,19 @@ public class ViewResturantFoodActivity extends AppCompatActivity {
 
        rv = findViewById(R.id.food_recyclerview);
 
+        ActionBar name = getSupportActionBar();
+
+        Bundle bundle = getIntent().getExtras();
+
+        String resname = bundle.getString("resname");
+
+        if(bundle!=null){
+
+            name.setTitle(resname);
+        }
+
+
+
 
       //foodlist = new ArrayList<>();
 
@@ -52,12 +66,12 @@ public class ViewResturantFoodActivity extends AppCompatActivity {
     private void getResfood() {
 
 
-        Bundle bundle = getIntent().getExtras();
 
 
 
-       String resid = bundle.getString("resid").toString();
-       Toast.makeText(this, "resid:" + resid, Toast.LENGTH_SHORT).show();
+
+
+
 
 
        FoodApi foodApi = Url.getInstance().create(FoodApi.class);

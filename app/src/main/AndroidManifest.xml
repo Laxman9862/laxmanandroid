@@ -21,16 +21,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-
+        <activity android:name=".Activity.CartActivity"></activity>
         <activity android:name=".Activity.ViewOrderActivity" />
         <activity android:name=".Activity.DashboardActivity" />
         <activity
             android:name=".Activity.ViewResturantFoodActivity"
-            android:parentActivityName=".Activity.DashboardActivity" />
+            android:parentActivityName=".Activity.ResActivity" />
         <activity
             android:name=".Activity.ViewResturantActitvity"
-            android:parentActivityName=".Activity.DashboardActivity" />
+            android:parentActivityName=".Activity.ResActivity" />
         <activity android:name=".Sensor.AccelerometerSensorActivity" />
         <activity android:name=".Notification.BroadcastActivity" />
         <activity android:name=".Notification.NotificationActivity" />

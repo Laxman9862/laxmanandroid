@@ -86,9 +86,9 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
     Button btnviewfood;
 
-    //TextView logout;
+    TextView username;
 
-   // CircleImageView userprofile;
+
 
     Fragment selectedFragment = null;
     public static List<ExploreFood> lstexfood = new ArrayList<>();
@@ -118,7 +118,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         //loading user from the API
            loaduser();
 
-           // Light sensor
+
 
 
 
@@ -180,7 +180,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
       cartimg.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              Intent i  = new Intent(DashboardActivity.this,ViewOrderActivity.class);
+              Intent i  = new Intent(DashboardActivity.this,CartActivity.class);
               startActivity(i);
           }
       });
@@ -195,7 +195,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     private void loaduser() {
 
         final UserApi userApi = Url.getInstance().create(UserApi.class);
-        Call<User>  usercall  = userApi.getuserdetails(token);
+        Call<User>  usercall  = userApi.getuserdetails(Url.token);
 
         usercall.enqueue(new Callback<User>() {
             @Override
@@ -208,11 +208,8 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 globaluser = response.body();
                 //String imgPath = Url.imagePath +  response.body().getProfileimage();
                 String username =  response.body().getName();
-                //Toast.makeText(DashboardActivity.this,"image:"+imgPath,Toast.LENGTH_SHORT).show();
-                //Toast.makeText(DashboardActivity.this,"name:"+username,Toast.LENGTH_SHORT).show();
-                //TextView navigationtxtuser = (TextView)drawer.findViewById(R.id.nav_header_username);
-                ImageView profile = (ImageView)drawer.findViewById(R.id.nav_header_imageView);
-                 //navigationtxtuser.setText(username);
+           TextView txtuser = (TextView)drawer.findViewById(R.id.txtusername);
+               // txtuser.setText(username);
 
             }
 

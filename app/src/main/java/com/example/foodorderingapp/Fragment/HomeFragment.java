@@ -129,7 +129,7 @@ public class HomeFragment extends Fragment implements SensorEventListener {
     private void getCategory(){
 
         FoodApi foodApi = Url.getInstance().create(FoodApi.class);
-        Call<List<Food>> foodCall = foodApi.getcategory(Url.token);
+        Call<List<Food>> foodCall = foodApi.getfood();
 
           foodCall.enqueue(new Callback<List<Food>>() {
               @Override
