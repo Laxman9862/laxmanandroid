@@ -83,8 +83,7 @@
 
         <Button
             android:layout_marginTop="20dp"
-            android:id="@+id/addtocartbtn"
-            android:textAllCaps="false"
+            android:id="@+id/cart"
             android:text="AddToCart"
             android:layout_width="wrap_content"
             android:layout_alignParentEnd="true"

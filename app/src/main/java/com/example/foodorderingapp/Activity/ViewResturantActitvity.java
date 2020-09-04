@@ -9,6 +9,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.foodorderingapp.Adapater.AllResturantAdapter;
@@ -30,6 +31,7 @@ public class ViewResturantActitvity extends AppCompatActivity {
     public SensorManager sensorManager;
 
     public static List<Restuarant> listres;
+     Button btnaddcart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

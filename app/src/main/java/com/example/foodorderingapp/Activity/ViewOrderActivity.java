@@ -61,10 +61,10 @@ public class ViewOrderActivity extends AppCompatActivity {
 
 
                String food = response.body().getFood();
-                String price = response.body().getTotalprice();
+
 
                 txtfood.setText(food);
-                txtprice.setText(price);
+
 
             }
 

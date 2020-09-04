@@ -41,7 +41,7 @@ public class CartAdapater  extends  RecyclerView.Adapter<CartAdapater.CartViewHo
 
         final Cart cart = lstcart.get(position);
         holder.txtfoodname.setText((cart.getFood()));
-        holder.txtprice.setText((cart.getTotalprice()));
+
 
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override

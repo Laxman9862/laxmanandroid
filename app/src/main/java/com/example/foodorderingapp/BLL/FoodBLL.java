@@ -26,28 +26,11 @@ import static com.example.foodorderingapp.Activity.DashboardActivity.lstdeals;
 public class FoodBLL {
     boolean isSuccess = false;
 
-    public boolean food(String user, String fod, String quanity, String totprice) {
-
-        Cart cart = new Cart(user, fod, quanity, totprice);
-
-        OrderApi orderApi = Url.getInstance().create(OrderApi.class);
-        Call<Cart> usersCall = orderApi.addcart(Url.token, cart);
-
-        try {
-            Response<Cart> signupResponse = usersCall.execute();
-            if (signupResponse.isSuccessful() &&
-                    signupResponse.body().equals("Order Successfully")) {
 
 
-                isSuccess = true;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return isSuccess;
 
 
-    }
+
 }
 
 

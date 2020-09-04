@@ -6,13 +6,19 @@ import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.foodorderingapp.Activity.CartActivity;
+import com.example.foodorderingapp.Activity.ResFoodActivity;
+import com.example.foodorderingapp.Activity.ViewResturantFoodActivity;
 import com.example.foodorderingapp.Model.Food;
 import com.example.foodorderingapp.Model.Restuarant;
 import com.example.foodorderingapp.R;
@@ -69,6 +75,16 @@ public class RestaurantFoodAdapter extends  RecyclerView.Adapter<RestaurantFoodA
             public void onClick(View v) {
 
 
+
+
+            }
+        });
+        holder.btnaddtocart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(mcontext, ResFoodActivity.class);
+                i.putExtra("foodid",res.getId());
+               mcontext.startActivity(i);
             }
         });
     }
@@ -84,12 +100,14 @@ public class RestaurantFoodAdapter extends  RecyclerView.Adapter<RestaurantFoodA
 
         ImageView restfoodimg;
         TextView txtrestfoodname,txtrestfoodprice;
+        Button btnaddtocart;
         public RestaurantFoodViewHolder(@NonNull View itemView) {
             super(itemView);
 
             restfoodimg = itemView.findViewById(R.id.restfoodimage);
             txtrestfoodname = itemView.findViewById(R.id.restfoodname);
             txtrestfoodprice = itemView.findViewById(R.id.restfoodprice);
+            btnaddtocart = itemView.findViewById(R.id.cart);
         }
     }
 }

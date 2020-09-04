@@ -4,15 +4,14 @@ public class Cart {
 
     private String user;
     private String food;
-    private String quanity;
+    private int quanity;
 
-    private String totalprice;
 
-    public Cart(String user, String food, String quanity, String totalprice) {
+
+    public Cart(String user, String food, int quanity) {
         this.user = user;
         this.food = food;
         this.quanity = quanity;
-        this.totalprice = totalprice;
 
 
 
@@ -35,18 +34,16 @@ public class Cart {
         this.food = food;
     }
 
-    public String getQuanity() {
+    public int getQuanity() {
         return quanity;
     }
 
-    public void setQuanity(String quanity) {
+    public void setQuanity(int quanity) {
         this.quanity = quanity;
     }
 
 
-    public String getTotalprice() {
-        return totalprice;
-    }
+
 
 
     }
