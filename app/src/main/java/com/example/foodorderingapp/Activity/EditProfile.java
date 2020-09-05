@@ -61,7 +61,6 @@ public class EditProfile extends AppCompatActivity {
         upphone = findViewById(R.id.upd_phone);
         upusername = findViewById(R.id.upd_username);
         uppassword = findViewById(R.id.password);
-        userprofile = findViewById(R.id.upd_userprofile);
         btnupdate = findViewById(R.id.updateuser);
 
 
@@ -96,7 +95,7 @@ public class EditProfile extends AppCompatActivity {
         User users = new User(fname, email, phone);
 
         UserApi usersAPI = Url.getInstance().create(UserApi.class);
-        Call<User> updateuser = usersAPI.updateuser(token, users);
+        Call<User> updateuser = usersAPI.updateuser(Url.token, users);
 
         updateuser.enqueue(new Callback<User>() {
                                @Override

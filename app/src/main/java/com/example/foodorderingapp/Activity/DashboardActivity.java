@@ -1,7 +1,6 @@
 package com.example.foodorderingapp.Activity;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,16 +15,9 @@ import android.app.Notification;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.net.ConnectivityManager;
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -35,42 +27,25 @@ import android.widget.Toast;
 
 
 import com.example.foodorderingapp.Broadcast.BroadcastReceiver;
-import com.example.foodorderingapp.Fragment.CartFragment;
 import com.example.foodorderingapp.Fragment.HomeFragment;
-import com.example.foodorderingapp.Interface.FoodApi;
 import com.example.foodorderingapp.Interface.UserApi;
 import com.example.foodorderingapp.Model.ExploreFood;
 import com.example.foodorderingapp.Model.Food;
-import com.example.foodorderingapp.Model.HotDeals;
 import com.example.foodorderingapp.Model.Restuarant;
 import com.example.foodorderingapp.Model.User;
 import com.example.foodorderingapp.Notification.Channel;
 import com.example.foodorderingapp.R;
 import com.example.foodorderingapp.URL.Url;
-import com.example.foodorderingapp.strictmode.StrictModeClass;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-import com.squareup.picasso.Picasso;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.example.foodorderingapp.URL.Url.getInstance;
 import static com.example.foodorderingapp.URL.Url.token;
-import static java.security.AccessController.getContext;
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
@@ -117,6 +92,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         cartimg = findViewById(R.id.cartlist);
         //loading user from the API
            loaduser();
+           logout();
 
 
 
@@ -180,7 +156,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
       cartimg.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              Intent i  = new Intent(DashboardActivity.this,CartActivity.class);
+              Intent i  = new Intent(DashboardActivity.this, OrderActivity.class);
               startActivity(i);
           }
       });
@@ -194,7 +170,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
     private void loaduser() {
 
-        final UserApi userApi = Url.getInstance().create(UserApi.class);
+        UserApi userApi = Url.getInstance().create(UserApi.class);
         Call<User>  usercall  = userApi.getuserdetails(Url.token);
 
         usercall.enqueue(new Callback<User>() {
@@ -208,8 +184,8 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 globaluser = response.body();
                 //String imgPath = Url.imagePath +  response.body().getProfileimage();
                 String username =  response.body().getName();
-           TextView txtuser = (TextView)drawer.findViewById(R.id.txtusername);
-               // txtuser.setText(username);
+                 TextView txtuser = (TextView)drawer.findViewById(R.id.txtusername);
+                 txtuser.setText(username);
 
             }
 
@@ -258,6 +234,21 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 getSupportFragmentManager().beginTransaction().replace(R.id.container,
                         new HomeFragment()).commit();
                 break;
+            case R.id.editprofile:
+                profileupdate();
+                break;
+            case R.id.cart:
+                vieworder();
+                break;
+
+
+            case R.id.account:
+                logout();
+                Intent i = new Intent(DashboardActivity.this,LoginActivity.class);
+                i.setFlags(i.FLAG_ACTIVITY_CLEAR_TASK); // clear all previous activity
+                startActivity(i);
+                finish();
+
 
 
 

@@ -4,53 +4,46 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodorderingapp.Model.Cart;
-import com.example.foodorderingapp.Model.User;
+import com.example.foodorderingapp.Model.Food;
 import com.example.foodorderingapp.R;
-import com.example.foodorderingapp.URL.Url;
 
 import java.util.List;
 
-public class CartAdapater  extends  RecyclerView.Adapter<CartAdapater.CartViewHolder>{
+public class CartAdapater extends RecyclerView.Adapter<CartAdapater.FoodViewholder> {
 
     Context mcontext;
     List<Cart> lstcart;
 
-    public CartAdapater(Context mcontext,List<Cart> lstcart){
-        this.mcontext = mcontext;
-        this.lstcart = lstcart;
+
+    public CartAdapater(Context mcontext, List<Cart> lstcart)
+    {
+        this.mcontext=mcontext;
+        this.lstcart=lstcart;
     }
+
+
 
     @NonNull
     @Override
-    public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mcontext).inflate(R.layout.order,parent,false);
-        return new CartViewHolder(v);
+    public FoodViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(mcontext).inflate(R.layout.activity_view_order,parent,false);
+        return new FoodViewholder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull FoodViewholder holder, int position) {
+        Cart cart = lstcart.get(position);
+        //holder.txtfoodname.setText(cart.getFood().f);
 
-        final Cart cart = lstcart.get(position);
-        holder.txtfoodname.setText((cart.getFood()));
 
 
-        holder.delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(mcontext.getApplicationContext(), cart.getFood()+" "+ "has been removed", Toast.LENGTH_LONG).show();
-                lstcart.remove(position);
-                notifyDataSetChanged();
-            }
-        });
 
     }
 
@@ -59,20 +52,21 @@ public class CartAdapater  extends  RecyclerView.Adapter<CartAdapater.CartViewHo
         return lstcart.size();
     }
 
-    public class CartViewHolder extends RecyclerView.ViewHolder{
-        ImageView imageView;
-        TextView txtfoodname,txtprice,delete;
-        Button btndel, bthupd;
+    public class FoodViewholder extends RecyclerView.ViewHolder {
 
-        public CartViewHolder(@NonNull View itemView) {
+        ImageView foodimg;
+        TextView txtfoodname,txtprice;
+
+        public FoodViewholder(@NonNull View itemView) {
             super(itemView);
-
-            imageView = itemView.findViewById(R.id.orderfoodimage);
-            txtfoodname = itemView.findViewById(R.id.orderfoodname);
+            foodimg = itemView.findViewById(R.id.restfoodimage);
+            txtfoodname = itemView.findViewById(R.id.restfoodname);
             txtprice = itemView.findViewById(R.id.restfoodprice);
-
-            bthupd = itemView.findViewById(R.id.btnupdate);
-            delete = itemView.findViewById(R.id.delete);
+           // txtrest_name = itemView.findViewById(R.id.rest_name);
+           // txtrest_address = itemView.findViewById(R.id.rest_address);
+           // txtrest_info = itemView.findViewById(R.id.rest_info);
+            //txtrest_status = itemView.findViewById(R.id.rest_status);
         }
     }
+
 }

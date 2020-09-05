@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.foodorderingapp">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -22,7 +23,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".Activity.ResFoodActivity"></activity>
-        <activity android:name=".Activity.CartActivity" />
         <activity android:name=".Activity.ViewOrderActivity" />
         <activity android:name=".Activity.DashboardActivity" />
         <activity
@@ -38,16 +38,12 @@
             android:name=".Activity.OrderActivity"
             android:parentActivityName=".Activity.DashboardActivity" />
         <activity
-            android:name=".Activity.FoodActivity"
-            android:parentActivityName=".Activity.DashboardActivity" />
-        <activity
             android:name=".Activity.EditProfile"
             android:parentActivityName=".Activity.DashboardActivity" />
         <activity
             android:name=".Activity.ResActivity"
             android:parentActivityName=".Activity.DashboardActivity" />
         <activity android:name=".Activity.RegisterActivity" />
-        <activity android:name=".Activity.MainActivity" />
         <activity
             android:name=".Activity.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

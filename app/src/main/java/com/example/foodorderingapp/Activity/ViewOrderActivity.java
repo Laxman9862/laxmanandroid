@@ -1,7 +1,6 @@
 package com.example.foodorderingapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -9,7 +8,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.foodorderingapp.Adapater.CartAdapater;
 import com.example.foodorderingapp.Interface.OrderApi;
 import com.example.foodorderingapp.Model.Cart;
 import com.example.foodorderingapp.R;
@@ -32,7 +30,7 @@ public class ViewOrderActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_order);
+        setContentView(R.layout.activity_cart2);
 
         recyclerView = findViewById(R.id.recycler_vieworder);
         txtfood = findViewById(R.id.restfoodname);
@@ -49,27 +47,27 @@ public class ViewOrderActivity extends AppCompatActivity {
 
     private void vieworderfood() {
         OrderApi orderApi = Url.getInstance().create(OrderApi.class);
-        Call<Cart> list = orderApi.getusercart(Url.token);
+        Call<List<Cart>> list = orderApi.usercart(Url.token);
 
-        list.enqueue(new Callback<Cart>() {
+        list.enqueue(new Callback<List<Cart>>() {
             @Override
-            public void onResponse(Call<Cart> call, Response<Cart> response) {
+            public void onResponse(Call<List<Cart>> call, Response<List<Cart>> response) {
                 if (!response.isSuccessful()) {
                     Toast.makeText(ViewOrderActivity.this, "error" + response.code(), Toast.LENGTH_LONG).show();
                     return;
                 }
 
 
-               String food = response.body().getFood();
+             cart = response.body();
 
 
-                txtfood.setText(food);
+
 
 
             }
 
             @Override
-            public void onFailure(Call<Cart> call, Throwable t) {
+            public void onFailure(Call<List<Cart>> call, Throwable t) {
 
             }
         });

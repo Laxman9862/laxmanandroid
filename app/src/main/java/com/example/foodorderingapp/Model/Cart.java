@@ -1,5 +1,7 @@
 package com.example.foodorderingapp.Model;
 
+import android.widget.TextView;
+
 public class Cart {
 
     private String user;

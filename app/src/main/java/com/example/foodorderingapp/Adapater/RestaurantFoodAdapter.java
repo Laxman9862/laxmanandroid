@@ -9,18 +9,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.example.foodorderingapp.Activity.CartActivity;
 import com.example.foodorderingapp.Activity.ResFoodActivity;
-import com.example.foodorderingapp.Activity.ViewResturantFoodActivity;
 import com.example.foodorderingapp.Model.Food;
-import com.example.foodorderingapp.Model.Restuarant;
 import com.example.foodorderingapp.R;
 import com.example.foodorderingapp.URL.Url;
 import com.example.foodorderingapp.strictmode.StrictModeClass;
@@ -73,20 +68,19 @@ public class RestaurantFoodAdapter extends  RecyclerView.Adapter<RestaurantFoodA
         holder.txtrestfoodname.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
-
-            }
-        });
-        holder.btnaddtocart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 Intent i = new Intent(mcontext, ResFoodActivity.class);
                 i.putExtra("foodid",res.getId());
-               mcontext.startActivity(i);
+                i.putExtra("foodname", res.getFoodname());
+                i.putExtra("price", res.getPrice());
+                i.putExtra("image", res.getFoodimage());
+                mcontext.startActivity(i);
+
+
+
+
             }
         });
+
     }
 
 
